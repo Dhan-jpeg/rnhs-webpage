@@ -1,11 +1,4 @@
-<?php
 
-session_start();
-if (empty($_SESSION['user_id'])) {
-    header('Location: login.php');
-    exit();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,10 +60,10 @@ if (empty($_SESSION['user_id'])) {
 <body>
     <div class="welcome-card">
         <h1>Welcome!</h1>
-        <p>You are logged in as user ID <strong><?php echo htmlspecialchars($_SESSION['user_id']); ?></strong>.</p>
+        <p>You are logged in.</p>
         <div class="user-actions">
-            <a href="../main-page/home.php" class="home-btn">Home</a>
-            <a class="logout-btn" href="logout.php">Logout</a>
+            <a href="../main-page/home.html" class="home-btn">Home</a>
+            <a class="logout-btn" href="logout.html">Logout</a>
         </div>
     </div>
 </body>
