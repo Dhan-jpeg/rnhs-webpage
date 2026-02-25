@@ -35,6 +35,17 @@
                 
                 <button type="submit" class="sign-in-btn">Login</button>
             </form>
+            <script>
+                // GitHub Pages has no server-side processing; ensure the login always navigates correctly
+                document.addEventListener('DOMContentLoaded', function() {
+                    var form = document.querySelector('.login-form');
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        // redirect using the same relative path; this avoids 404 even if repo hosted in subdirectory
+                        window.location.href = './user.html';
+                    });
+                });
+            </script>
             <p class="back-container">
                 <a href="main-page/home.html" class="back-home" aria-label="Back to homepage">
                     <i class="fas fa-arrow-left"></i>
