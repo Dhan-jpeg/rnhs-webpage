@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News - RNHS</title>
+  <!-- favicon -->
+  <link rel="icon" href="../../logo2.jpeg" type="image/jpeg" />
+  <link rel="stylesheet" href="news.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+  <div id="home" class="container clearfix">
+    <video autoplay muted loop id="myVideo">
+      <source src="rnhs.mp4" type="video/mp4">
+    </video>
+    <div class="button-container">
+        <button class="prev-btn" aria-label="Previous Page" onclick="goBack()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </button>
+    </div>
+    <div class="intro-text">
+      <div class="small-heading">News</div>
+      <h3>Rosales National High School</h3>
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="banner-about">
+      <h1>Latest News</h1>
+      <p>Stay updated with the latest news and announcements from Rosales National High School.</p>
+      <p>Our news section highlights important events, achievements, and updates that keep our school community informed and engaged.</p>
+    </div>
+  </div>
+  
+  <div class="welcome">
+    <div class="news-container">
+      <div class="news-item">
+        <img src="pictorial.jpeg"/>
+        <h3>12-ICT BABBAGE PICTORIAL</h3>
+        <p>The Grade 12-ICT Charles Babbage class proudly captured their graduation pictorial, celebrating their hard work, friendship, and journey inspired by Charles Babbage.</p>
+        <button onclick="openModal('pictorial', '12-ICT BABBAGE PICTORIAL', 'The Grade 12-ICT Charles Babbage class proudly captured their graduation pictorial, celebrating their hard work, friendship, and journey inspired by Charles Babbage. This milestone moment represents the culmination of years of dedication, friendship, and shared experiences. Each student in this class has contributed to making this pictorial a memorable occasion. The pictorial showcases not only their academic achievements but also the bonds they have formed throughout their time in the class.')">Read More</button>
+      </div>
+
+      <div class="news-item">
+        <img src="wi.jpeg"/>
+        <h3>Work Immersion 2026</h3>
+        <p>The students of Grade 12-ICT Charles Babbage from Rosales National High School successfully finished their 80-hour work immersion and gained valuable skills and experience.</p>
+        <button onclick="openModal('wi', 'Work Immersion 2026', 'The students of Grade 12-ICT Charles Babbage from Rosales National High School successfully completed their 80-hour work immersion program. This intensive program provided students with practical, real-world experience in their chosen fields. Students gained valuable insights into workplace culture, professional skills, and industry practices. The work immersion experience helped them bridge the gap between theoretical learning and practical application, preparing them for their future careers.')">Read More</button>
+      </div>
+
+      <div class="news-item">
+        <img src="sslg.jpeg"/>
+        <h3>SSLG Election</h3>
+        <p>The election of SSLG officers will be held on February 24 at Rosales National High School to choose the new student leaders.</p>
+        <button onclick="openModal('sslg', 'SSLG Election', 'The election of SSLG (Supreme Student Governing Board) officers will be held on February 24 at Rosales National High School. This important event will give students the opportunity to choose their new student leaders for the upcoming year. The elected officers will represent the student body and work towards improving school programs and student activities. All students are encouraged to participate in voting for the candidates they believe will best serve the student community.')">Read More</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="newsModal" class="news-modal">
+    <div class="news-modal-content">
+      <span class="news-modal-close" onclick="closeModal()">&times;</span>
+      <div class="news-modal-body">
+        <h2 id="modalTitle">News Title</h2>
+        <p id="modalDescription">News description goes here...</p>
+      </div>
+      <div class="news-modal-footer">
+        <button class="modal-close-btn" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  <div class="footer-top">
+    <div class="footer-col footer-logo">
+      <span>RNHS</span>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>rnhs@gmail.com</p>
+      <p>Brgy. Don Antonio Village</p>
+      <p>Rosales Pangasinan</p>
+      <p>Zip code : 2441</p>
+      <p>+63 912 345 6789</p>
+    </div>
+    <div class="footer-col">
+      <h4>About You</h4>
+      <a href="#">Education</a>
+      <a href="#">Location</a>
+    </div>
+    <div class="footer-col">
+      <h4>Join Us</h4>
+      <a href="#">Login</a>
+      <a href="#">Register</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Monday-Fri: 8:00am to 5:00pm</p>
+      <p>+012 345 6789</p>
+    </div>
+    <div class="footer-col footer-social" aria-label="Footer social media links">
+      <a href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube" title="YouTube"><i class="fa-solid fa-at"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <a href="assets/web-dev/index.html">Dhaniel Caliboso</a> - All Rights Reserved</p>
+  </div>
+</footer>
+
+<script>
+  function goBack() {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = '../../home.html';
+    }
+  }
+
+  function openModal(id, title, description) {
+    const modal = document.getElementById('newsModal');
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalDescription').textContent = description;
+    modal.classList.add('active');
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('newsModal');
+    modal.classList.remove('active');
+  }
+
+  // Close modal when clicking outside of it
+  window.onclick = function(event) {
+    const modal = document.getElementById('newsModal');
+    if (event.target === modal) {
+      closeModal();
+    }
+  }
+</script>
+
+</body>
+</html>

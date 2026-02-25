@@ -1,0 +1,225 @@
+<?php
+session_start();
+if (empty($_SESSION['user_id'])) {
+    header('Location: ../student-portal/login.php');
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rosales National High School</title>
+  <link rel="icon" href="logo2.jpeg" type="image/jpeg" />
+  <link rel="stylesheet" href="home.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+  <div id="home" class="container clearfix">
+    <?php if (!empty($_SESSION['user_id'])): ?>
+        <a href="../student-portal/user.php" class="btn-login"><i class="fas fa-user"></i></a>
+    <?php else: ?>
+        <a href="../student-portal/login.php" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</a>
+    <?php endif; ?>
+    <video autoplay muted loop id="myVideo">
+      <source src="rnhs.mp4" type="video/mp4">
+    </video>
+
+    <div class="intro-text">
+      <div class="small-heading">Rosales National High School</div>
+      <h3>Senior High School</h3>
+      <p>
+        is a dynamic public secondary school dedicated to providing quality, inclusive education that empowers students to achieve academic excellence and personal growth.
+      </p>
+      <p>
+        Committed to shaping responsible and future-ready individuals, the school fosters a supportive learning environment grounded in integrity, innovation, and community engagement.
+      </p>
+    </div>
+  </div>
+
+  <nav>
+    <ul>
+      <li class="logo-nav">
+        <a href="home.php">
+          <img src="logo2.jpeg" alt="Logo" />
+          RNHS
+        </a>
+      </li>
+      <li><a href="home.php">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#strands">Strands</a></li>
+      <li><a href="assets/about-us/about.html">About Us</a></li>
+      <li><a href="assets/contact-us/contact.html">Contact Us</a></li>
+      <li>
+        <button class="search-btn" aria-label="Search" title="Search" onclick="toggleSearchBar()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.31a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
+        </button>
+      </li>
+      <li>
+        <div class="search-bar" id="searchBar">
+          <input type="text" class="search-input" placeholder="Search..." aria-label="Search input">
+          <button class="search-close" onclick="toggleSearchBar()" aria-label="Close search"><i class="fas fa-times"></i></button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="banner">
+    <div class="banner-text">
+      <h1>WELCOME</h1>
+      <p>Where excellence in education meets a strong commitment to character, leadership, and community. We are proud to nurture lifelong learners and future leaders in a safe, inclusive, and inspiring environment.</p>
+      <div class="buttons">
+        <button class="btn-primary"></button>
+        <button class="btn-secondary"></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="news" class="news">
+    <h2>News</h2>
+  <div class="news-container">
+    <div class="news-item">
+      <img src="assets/news/pictorial.jpeg"/>
+      <h3>12-ICT BABBAGE PICTORIAL</h3>
+      <p>The Grade 12-ICT Charles Babbage class proudly captured their graduation pictorial, celebrating their hard work, friendship, and journey inspired by Charles Babbage.</p>
+      <button onclick="window.location.href='assets/news/news.html'">Read More</button>
+    </div>
+
+    <div class="news-item">
+      <img src="assets/news/wi.jpeg"/>
+      <h3>Work Immersion 2026</h3>
+      <p>The students of Grade 12-ICT Charles Babbage from Rosales National High School successfully finished their 80-hour work immersion and gained valuable skills and experience.</p>
+      <button onclick="window.location.href='assets/news/news.html'">Read More</button>
+    </div>
+
+    <div class="news-item">
+      <img src="assets/news/sslg.jpeg"/>
+      <h3>SSLG Election</h3>
+      <p>
+        The election of SSLG officers will be held on February 24 at Rosales National High School to choose the new student leaders.
+      </p>
+      <button onclick="window.location.href='assets/news/news.html'">Read More</button>
+    </div>
+  </div>
+  <div class="see-more-container">
+    <button class="see-more" onclick="window.location.href='assets/news/news.html'">See More</button>
+  </div>
+
+  </div>
+  <div id="events" class="events">
+    <h2>Events</h2>
+  <div class="events-container">
+    <div class="events-item">
+      <img src="assets/events/feb14.jpg"/>
+      <h3>RNHS <strong>Feb. Ibig Special</strong></h3>
+      <h4>February 12-13, 2026</h4>
+      <button onclick="window.location.href='assets/events/events.html'">Read More</button>
+    </div>
+
+    <div class="events-item">
+      <img src="assets/events/tvldemonstration.jpg"/>
+      <h3>TVL Demonstration Skills</h3>
+      <h4>February 19, 2026</h4>
+      <button onclick="window.location.href='assets/events/events.html'">Read More</button>
+    </div>
+
+    <div class="events-item">
+      <img src="assets/events/field-demo.jpeg"/>
+      <h3>Field Demo</h3>
+      <h4>March 2, 2026</h4>
+      <button onclick="window.location.href='assets/events/events.html'">Read More</button>
+    </div>
+  </div>
+
+  <div class="see-more-container">
+    <button class="see-more" onclick="window.location.href='assets/events/events.html'">See More</button>
+  </div>
+  </div>
+  
+  <div id="strands" class="strands">
+    <h2 class="strand-title">Strands</h2>
+    <div class="carousel">
+        <div class="carousel-inner">
+          <div class="item"><img src="assets/stem.jpg" alt="" /></div>
+          <div class="item"><img src="assets/humss.jpg" alt="" /></div>
+          <div class="item"><img src="assets/abm.jpg" alt="" /></div>
+          <div class="item"><img src="assets/tvl.jpg" alt="" /></div>
+          <div class="item"><img src="assets/gas.jpg" alt="" /></div>
+        </div>
+        <div aria-hidden class="carousel-inner">
+          <div class="item"><img src="assets/stem.jpg" alt="" /></div>
+          <div class="item"><img src="assets/humss.jpg" alt="" /></div>
+          <div class="item"><img src="assets/abm.jpg" alt="" /></div>
+          <div class="item"><img src="assets/tvl.jpg" alt="" /></div>
+          <div class="item"><img src="assets/gas.jpg" alt="" /></div>
+        </div>
+        
+    </div>
+    <a href="assets/strands/strands.html"><button class="see-more-btn">See More</button></a>
+  </div>
+
+  <footer>
+  <div class="footer-top">
+    <div class="footer-col footer-logo">
+      <span>RNHS</span>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>rnhs@shs.com</p>
+      <p>Brgy. Don Antonio Village</p>
+      <p>Rosales Pangasinan</p>
+      <p>Zip code : 2441</p>
+      <p>+63 912 345 6789</p>
+    </div>
+    <div class="footer-col">
+      <h4>About You</h4>
+      <a href="#">Education</a>
+      <a href="#">Location</a>
+    </div>
+    <div class="footer-col">
+      <h4>Join Us</h4>
+      <a href="../student-portal/login.php">Login</a>
+      <a href="../student-portal/registry.php">Register</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Monday-Fri: 8:00am to 5:00pm</p>
+      <p>+012 345 6789</p>
+    </div>
+    <div class="footer-col footer-social" aria-label="Footer social media links">
+      <a href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube" title="YouTube"><i class="fa-solid fa-at"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <a href="assets/web-dev/index.html">Dhaniel Caliboso</a> - All Rights Reserved</p>
+  </div>
+</footer>
+
+<script>
+  function toggleSearchBar() {
+    const searchBar = document.getElementById('searchBar');
+    searchBar.classList.toggle('active');
+    
+    if (searchBar.classList.contains('active')) {
+      const searchInput = searchBar.querySelector('.search-input');
+      searchInput.focus();
+    }
+  }
+
+  window.addEventListener('resize', () => {
+    const inner = document.querySelector('.carousel-inner');
+    if (inner) {
+      inner.style.animation = 'none';
+      void inner.offsetWidth;
+      inner.style.animation = '';
+    }
+  });
+</script>
+
+</body>
+</html>

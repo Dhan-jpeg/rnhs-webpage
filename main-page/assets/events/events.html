@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Events - RNHS</title>
+  <!-- favicon -->
+  <link rel="icon" href="../../logo2.jpeg" type="image/jpeg" />
+  <link rel="stylesheet" href="events.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+  <div id="home" class="container clearfix">
+    <video autoplay muted loop id="myVideo">
+      <source src="rnhs.mp4" type="video/mp4">
+    </video>
+    <div class="button-container">
+        <button class="prev-btn" aria-label="Previous Page" onclick="goBack()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </button>
+    </div>
+    <div class="intro-text">
+      <div class="small-heading">Events</div>
+      <h3>Rosales National High School</h3>
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="banner-about">
+      <h1>Upcoming Events</h1>
+      <p>Stay informed about the exciting events and activities happening at Rosales National High School.</p>
+      <p>Our events section highlights special occasions, demonstrations, and activities that bring our school community together.</p>
+    </div>
+  </div>
+  
+  <div class="welcome">
+    <div class="events-container">
+      <div class="event-item">
+        <img src="feb14.jpg"/>
+        <h3>RNHS <strong>Feb. Ibig Special</strong></h3>
+        <h4>February 12-13, 2026</h4>
+        <p>A special celebration of love and friendship at Rosales National High School featuring various activities and entertainment.</p>
+        <button onclick="openModal('feb-ibig', 'RNHS Feb. Ibig Special', 'The RNHS Feb. Ibig Special is a highly anticipated event celebrating love, friendship, and school spirit. Scheduled for February 12-13, 2026, this special celebration brings the entire school community together. The event features a variety of activities including performances, games, contests, and entertainment. Students and faculty participate in various programs that showcase talent and foster camaraderie among classmates. The Feb. Ibig Special is a cherished tradition at RNHS that strengthens bonds between students and creates lasting memories. Everyone is invited to participate and enjoy this festive occasion.')">Read More</button>
+      </div>
+
+      <div class="event-item">
+        <img src="tvldemonstration.jpg"/>
+        <h3>TVL Demonstration Skills</h3>
+        <h4>February 19, 2026</h4>
+        <p>An exhibition showcasing the technical and vocational skills developed by our TVL students through hands-on demonstrations.</p>
+        <button onclick="openModal('tvl-demo', 'TVL Demonstration Skills', 'The TVL Demonstration Skills event on February 19, 2026, is a showcase of the technical expertise and vocational competencies developed by our Technical-Vocational Livelihood students. This event provides an excellent opportunity for students to display their skills in various trades such as electrical installation, plumbing, carpentry, and other technical fields. Students demonstrate practical applications of their learning, highlighting the quality of instruction and dedication to skill-building. The event attracts industry professionals, potential employers, and community members interested in vocational education. It serves as a bridge between school and industry, demonstrating the relevance and value of our TVL programs.')">Read More</button>
+      </div>
+
+      <div class="event-item">
+        <img src="field-demo.jpeg"/>
+        <h3>Field Demo</h3>
+        <h4>March 2, 2026</h4>
+        <p>A practical field demonstration showcasing agricultural and environmental initiatives implemented by our school.</p>
+        <button onclick="openModal('field-demo', 'Field Demo', 'The Field Demo on March 2, 2026, is an outdoor demonstration focusing on agricultural practices, environmental sustainability, and practical application of scientific knowledge. This event showcases various field activities including crop demonstrations, sustainable farming techniques, environmental conservation projects, and hands-on agricultural experiments. Students actively participate in demonstrating these practices, gaining practical experience and sharing knowledge with visitors. The field demo promotes environmental awareness and highlights the importance of sustainable development. It provides a platform for students to showcase their research projects and agricultural innovations. This event strengthens the connection between classroom learning and real-world application in agriculture and environmental science.')">Read More</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="eventModal" class="event-modal">
+    <div class="event-modal-content">
+      <span class="event-modal-close" onclick="closeModal()">&times;</span>
+      <div class="event-modal-body">
+        <h2 id="modalTitle">Event Title</h2>
+        <p id="modalDescription">Event description goes here...</p>
+      </div>
+      <div class="event-modal-footer">
+        <button class="modal-close-btn" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  <div class="footer-top">
+    <div class="footer-col footer-logo">
+      <span>RNHS</span>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>rnhs@gmail.com</p>
+      <p>Brgy. Don Antonio Village</p>
+      <p>Rosales Pangasinan</p>
+      <p>Zip code : 2441</p>
+      <p>+63 912 345 6789</p>
+    </div>
+    <div class="footer-col">
+      <h4>About You</h4>
+      <a href="#">Education</a>
+      <a href="#">Location</a>
+    </div>
+    <div class="footer-col">
+      <h4>Join Us</h4>
+      <a href="#">Login</a>
+      <a href="#">Register</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Monday-Fri: 8:00am to 5:00pm</p>
+      <p>+012 345 6789</p>
+    </div>
+    <div class="footer-col footer-social" aria-label="Footer social media links">
+      <a href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube" title="YouTube"><i class="fa-solid fa-at"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <a href="assets/web-dev/index.html">Dhaniel Caliboso</a> - All Rights Reserved</p>
+  </div>
+</footer>
+
+<script>
+  function goBack() {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = '../../home.html';
+    }
+  }
+
+  function openModal(id, title, description) {
+    const modal = document.getElementById('eventModal');
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalDescription').textContent = description;
+    modal.classList.add('active');
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('eventModal');
+    modal.classList.remove('active');
+  }
+
+  // Close modal when clicking outside of it
+  window.onclick = function(event) {
+    const modal = document.getElementById('eventModal');
+    if (event.target === modal) {
+      closeModal();
+    }
+  }
+</script>
+
+</body>
+</html>

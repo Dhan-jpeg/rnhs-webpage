@@ -1,0 +1,77 @@
+<?php
+
+session_start();
+if (empty($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f3f3f3;
+            font-family: 'Poppins', sans-serif;
+        }
+        .welcome-card {
+            background: #fff;
+            padding: 40px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .welcome-card h1 {
+            margin-bottom: 16px;
+            color: #333;
+        }
+        .welcome-card p {
+            color: #555;
+            margin: 0;
+        }
+        .welcome-card a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #fff;
+            background: #d32f2f;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+        .welcome-card .user-actions a {
+            margin-right: 10px;
+        }
+        .welcome-card a.home-btn {
+            background: #3498db;
+        }
+        .welcome-card a.logout-btn {
+            background: #e74c3c;
+        }
+        .welcome-card a:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-card">
+        <h1>Welcome!</h1>
+        <p>You are logged in as user ID <strong><?php echo htmlspecialchars($_SESSION['user_id']); ?></strong>.</p>
+        <div class="user-actions">
+            <a href="../main-page/home.php" class="home-btn">Home</a>
+            <a class="logout-btn" href="logout.php">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

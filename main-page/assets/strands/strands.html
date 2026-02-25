@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strands</title>
+  <!-- favicon -->
+  <link rel="icon" href="../../logo2.jpeg" type="image/jpeg" />
+  <!-- Font Awesome for Icons -->
+   <link rel="stylesheet" href="strands.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <video autoplay muted loop>
+    <source src="rnhs.mp4" type="video/mp4">
+  </video>
+  <div class="button-container">
+        <button class="prev-btn" aria-label="Previous Page" onclick="window.history.back()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </button>
+    </div>
+  <section class="search-category">
+    <div class="header">
+      <h2>Strands</h2>
+    </div>
+    <p class="subtitle">Senior High School Strands</p>
+    <div class="categories">
+      
+      <div class="category-card">
+        <div class="card-header">
+          <div class="icon-bg"><i class="fas fa-microscope"></i></div>
+          <h3>STEM</h3>
+        </div>
+        <div class="card-details">
+          <p class="desc">Science, Technology, Engineering, and Mathematics.</p>
+          <button class="view-btn" onclick="openModal('stem')">View Details</button>
+        </div>
+      </div>
+
+      <div class="category-card">
+        <div class="card-header">
+          <div class="icon-bg"><i class="fas fa-book"></i></div>
+          <h3>HUMSS</h3>
+        </div>
+        <div class="card-details">
+          <p class="desc">Humanities, Social Sciences, and Communication.</p>
+          <button class="view-btn" onclick="openModal('humss')">View Details</button>
+        </div>
+      </div>
+
+      <div class="category-card">
+        <div class="card-header">
+          <div class="icon-bg"><i class="fas fa-briefcase"></i></div>
+          <h3>ABM</h3>
+        </div>
+        <div class="card-details">
+          <p class="desc">Accountancy, Business, and Management.</p>
+          <button class="view-btn" onclick="openModal('abm')">View Details</button>
+        </div>
+      </div>
+
+      <div class="category-card">
+        <div class="card-header">
+          <div class="icon-bg"><i class="fas fa-tools"></i></div>
+          <h3>TVL</h3>
+        </div>
+        <div class="card-details">
+          <p class="desc">Technical-Vocational Livelihood and Skills.</p>
+          <button class="view-btn" onclick="openModal('tvl')">View Details</button>
+        </div>
+      </div>
+
+      <div class="category-card">
+        <div class="card-header">
+          <div class="icon-bg"><i class="fas fa-graduation-cap"></i></div>
+          <h3>GAS</h3>
+        </div>
+        <div class="card-details">
+          <p class="desc">General Academic Strand with balanced subjects.</p>
+          <button class="view-btn" onclick="openModal('gas')">View Details</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="strandModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      
+      <div class="modal-header">
+        <div class="modal-icon-bg">
+          <i id="modalIcon" class=""></i>
+        </div>
+        <h2 id="modalTitle">Strand Name</h2>
+        <p id="modalSubtitle">Full Strand Name</p>
+      </div>
+
+      <div class="modal-body">
+        <h3>Description</h3>
+        <p id="modalDesc">Description goes here...</p>
+        
+        <h3>Core Subjects</h3>
+        <ul id="modalSubjects" class="subjects-list">
+        </ul>
+
+        <h3>Possible Careers</h3>
+        <div id="modalCareers" class="careers-tags">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="apply-btn">Apply Now</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="strands.js"></script>
+</body>
+</html>

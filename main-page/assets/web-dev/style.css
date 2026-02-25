@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #222;
+  box-sizing: border-box;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  background: #EEEEEE;
+	max-width: 800px;
+	margin: 50px auto;
+	height: 1000px;
+	display: flex;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.prev-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 100;
+}
+
+.prev-btn svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.prev-btn:hover {
+    background-color: #d32f2f;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.prev-btn:hover svg {
+    transform: translateX(-3px);
+}
+
+.prev-btn:active {
+    transform: scale(0.92);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+	width: 290px;
+	padding: 28px;
+	background: #1055C9;
+}
+
+.left-section img {
+  width: 140px;
+  padding: 0px;
+  object-fit: cover;
+  border-radius: 150px;
+}
+
+.names {
+	margin-bottom: 12px;
+}
+
+.left-section .name {
+	font-size: 22px;
+	color: #fff;
+}
+
+.left-section .grade {
+	margin-bottom: 8px;
+	color: #fff;
+}
+
+.left-section p {
+	font-size: 13px;
+	color: #eeeeee;
+}
+
+.left-section h2 {
+	color: #eeeeee;
+}
+
+.left-section ul li {
+	color: #eeeeee;
+}
+
+.left-section .email {
+	margin-bottom: 40px;
+}
+
+.left-section .about {
+	margin-bottom: 40px;
+}
+
+.line-1 {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.left-section .about p {
+	text-align: justify;
+}
+
+.skills button {
+	font-family: 'Poppins';
+}
+
+.left-section .skills {
+	margin-bottom: 40px;
+}
+
+.line-2 {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.left-section .achievements {
+	font-size: 14px;
+	margin-top: 15px;
+}
+
+.line-3 {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.right-section {
+	width: 560px;
+	padding: 50px;
+}
+
+.line-4 {
+	border-bottom: 1px solid #1055C9;
+	margin-bottom: 8px;
+}
+
+.right-section p {
+	font-size: 13px;
+}
+
+.char {
+	margin: 10px 0 50px 0;
+	color: #1055C9;
+}
+
+.char ul li {
+	font-size: 13px;
+	line-height: 2;
+	color: #1055C9;
+}
+
+.line-8 {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #1055C9;
+}
+
+.exp {
+	margin: 10px 0 80px 0;
+	color: #1055C9;
+}
+
+.line-5 {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #1055C9;
+}
+
+.educ {
+	margin: 10px 0 40px 0;
+	color: #1055C9;
+}
+
+.educ p {
+	line-height: 2;
+}
+
+.line-6 {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #1055C9;
+}
+
+.software h2 {
+	color: #1055C9;
+}
+
+.software .box {
+	position: relative;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 150px 1fr;
+	justify-content: center;
+	align-items: center;
+}
+
+.software .box h4 {
+	text-transform: uppercase;
+	font-weight: 500;
+	color: #71a1f4;
+}
+
+.software .box .percent {
+	position: relative;
+	width: 100%;
+	height: 10px;
+	background: #a1c0f7;
+}
+
+.software .box .percent .avg1 {
+	width: 75%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: #1055C9;
+}
+
+.software .box .percent .avg2 {
+	width: 20%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: #1055C9;
+}
+
+.software .box .percent .avg3 {
+	width: 15%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: #1055C9;
+}
+
+.software .box .percent .avg4 {
+	width: 5%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: #1055C9;
+}
+
+.line-7 {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #1055C9;
+}
+
+.seminar h2 {
+	margin-top: 50px;
+	color: #1055C9;
+}
+
+.seminar ul li {
+	font-size: 13px;
+	line-height: 2;
+	color: #1055C9;
+	list-style: none;
+}
+
+.seminar h4 {
+	color: #1055C9;
+	margin-left: 4px;
+	line-height: 1;
+}
+
+button {
+	list-style: none;
+	background: #fff;
+	padding: 8px;
+	color: #1055C9;
+	margin: 4px 0;
+	border-radius: 20px ;
+	font-size: 13px;
+	border: none;
+}
