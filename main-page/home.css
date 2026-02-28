@@ -18,40 +18,63 @@ body {
   padding: 40px 80px;
 }
     
-.btn-login {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  background-color: #d32f2f;
-  color: white;
-  border: none;
-  border-radius: 14px;
-  padding: 0.8rem 2.2rem;
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 0.95rem;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  z-index: 10;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+.auth-section {
+    position: absolute;
+    top: 20px;
+    right: 30px;
 }
 
-.btn-login:hover {
-  background-color: #b71c1c;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
 }
 
-.btn-login:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
+.profile-btn {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
 }
 
-.btn-login i {
-  font-size: 1.1rem;
+.profile-btn:hover {
+    background: #a12424;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    color: #333;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+    background: #f2f2f2;
+}
+
+.dropdown-menu.show {
+    display: block;
 }
 .container {
   width: 100%;
@@ -97,7 +120,7 @@ body {
 }
 
 nav {
-  background-color: #d32f2f;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
   display: flex;
   justify-content: center;
   padding: 12px 0;
@@ -311,7 +334,7 @@ nav ul li:hover a::after {
 }
 .btn-secondary:hover,
 .btn-strands:hover{
-  background-color: #d32f2f;
+  background-color: linear-gradient(135deg, #ff416c, #ff4b2b);
   color: white;
 }
 
@@ -445,7 +468,7 @@ h2 {
   border-radius: 10px;
 }
 .strands {
-  background-color: #d32f2f;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
   width: 100%;
   height: 600px;
   display: flex;

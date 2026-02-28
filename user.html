@@ -1,70 +1,113 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         html, body {
             height: 100%;
             margin: 0;
+            font-family: 'Poppins', sans-serif;
         }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #f3f3f3;
-            font-family: 'Poppins', sans-serif;
+            background: #d32;
         }
+
+        /* Card */
         .welcome-card {
-            background: #fff;
-            padding: 40px 60px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: white;
+            backdrop-filter: blur(15px);
+            padding: 50px 70px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
             text-align: center;
+            color: #222;
+            animation: fadeIn 0.8s ease;
         }
+
         .welcome-card h1 {
-            margin-bottom: 16px;
-            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: 700;
         }
+
         .welcome-card p {
-            color: #555;
-            margin: 0;
-        }
-        .welcome-card a {
-            display: inline-block;
-            margin-top: 20px;
-            color: #fff;
-            background: #d32f2f;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 4px;
-        }
-        .welcome-card .user-actions a {
-            margin-right: 10px;
-        }
-        .welcome-card a.home-btn {
-            background: #3498db;
-        }
-        .welcome-card a.logout-btn {
-            background: #e74c3c;
-        }
-        .welcome-card a:hover {
+            margin-bottom: 30px;
+            font-size: 16px;
             opacity: 0.9;
+        }
+
+        /* Buttons */
+        .user-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .user-actions a {
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        /* Home Button */
+        .home-btn {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        }
+
+        .user-actions a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="welcome-card">
         <h1>Welcome!</h1>
-        <p>You are logged in.</p>
+        <p>You are successfully logged in.</p>
+
         <div class="user-actions">
             <a href="main-page/home.html" class="home-btn">Home</a>
-            <a class="logout-btn" href="logout.html">Logout</a>
+            <a href="logout.html" class="logout-btn">Logout</a>
         </div>
     </div>
+
+    <script>
+    if (!localStorage.getItem("currentUser")) {
+        window.location.href = "index.html";
+    }
+    </script>
 </body>
 </html>

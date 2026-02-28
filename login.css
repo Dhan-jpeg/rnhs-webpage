@@ -172,36 +172,3 @@ body, html {
     background-color: #d32f2f;
     color: #fff;
 }
-
-/* styled link back to main page */
-.back-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    text-align: center;
-    margin: 0;
-}
-
-.back-home {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    color: #d32f2f;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.back-home i {
-    font-size: 18px;
-}
-
-.back-home:hover {
-    background-color: #d32f2f;
-    color: #fff;
-}

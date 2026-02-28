@@ -19,7 +19,7 @@
         </div>
         <div class="right-panel">
 
-            <form class="login-form" action="user.html" method="GET">
+            <form class="login-form">
                 <label for="email">Your email</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" />
                 
@@ -36,29 +36,10 @@
                 <button type="submit" class="sign-in-btn">Login</button>
             </form>
             <script>
-                // GitHub Pages has no server-side processing; ensure the login always navigates correctly
-                document.addEventListener('DOMContentLoaded', function() {
-                    var form = document.querySelector('.login-form');
-                    form.addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        // redirect using the same relative path; this avoids 404 even if repo hosted in subdirectory
-                        window.location.href = './user.html';
-                    });
-                });
-            </script>
-            <p class="back-container">
-                <a href="main-page/home.html" class="back-home" aria-label="Back to homepage">
-                    <i class="fas fa-arrow-left"></i>
-                </a>
-            </p>
-            <script>
-                // warn user if they try to leave without logging in
                 document.addEventListener('DOMContentLoaded', function() {
                     var links = document.querySelectorAll('.back-home');
                     links.forEach(function(link) {
                         link.addEventListener('click', function(e) {
-                            // check session flag from PHP
-                            // PHP removed; warning always shown
                             if (true === false) {
                                 e.preventDefault();
                                 if (confirm('You are not logged in. Leaving the page will discard any progress. Continue?')) {
@@ -68,7 +49,37 @@
                         });
                     });
                 });
+                
             </script>
+            <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.querySelector(".login-form");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // stops automatic redirect
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+
+        const validUser = users.find(user =>
+            user.email === email && user.password === password
+        );
+
+        if (validUser) {
+            localStorage.setItem("currentUser", email);
+            window.location.href = "user.html"; // redirect ONLY if correct
+        } else {
+            alert("Wrong email or password!");
+        }
+
+    });
+
+});
+
+</script>
         </div>
     </div>
 </body>
