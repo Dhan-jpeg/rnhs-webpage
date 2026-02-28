@@ -9,7 +9,7 @@
 
 body, html {
     height: 100%;
-    background: #d32f2f;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
 }
 
 .container {
@@ -52,7 +52,7 @@ body, html {
 
 .right-panel {
     flex: 1.3;
-    background-color: #d32f2f;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,7 +160,7 @@ body, html {
     background-color: #fff;
     border: none;
     padding: 12px 0;
-    color: #d32f2f;
+    color: linear-gradient(135deg, #ff416c, #ff4b2b);
     font-weight: 600;
     font-size: 15px;
     border-radius: 2px;
@@ -169,6 +169,6 @@ body, html {
 }
 
 .sign-in-btn:hover {
-    background-color: #d32f2f;
+    background-color: linear-gradient(135deg, #ff416c, #ff4b2b);
     color: #fff;
 }

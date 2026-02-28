@@ -9,9 +9,8 @@
 
 body, html {
     height: 100%;
-    background: #d32f2f;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
 }
-
 .container {
     display: flex;
     height: 100vh;
@@ -52,7 +51,7 @@ body, html {
 
 .right-panel {
     flex: 1.3;
-    background-color: #d32f2f;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
     display: flex;
     justify-content: center;
     align-items: center;
